@@ -1,0 +1,27 @@
+import "./App.css";
+import { useState } from "react";
+
+import Viewer from "./assets/components/Viewer";
+import Controller from "./assets/components/Controller";
+
+function App() {
+  const [count, setCount] = useState(0);
+
+  const onClickButton = (value) => {
+    setCount(count + value);
+  };
+
+  return (
+    <div className="App">
+      <h1>Simple Counter</h1>
+      <section>
+        <Viewer count={count} />
+      </section>
+      <section>
+        <Controller onClickButton={onClickButton} />
+      </section>
+    </div>
+  );
+}
+
+export default App;
